@@ -1,0 +1,140 @@
+#
+#
+#preamble
+
+#tamplet
+#beamer
+#article
+#b: only expand at begining of line, this means u cannot expand lr{ in the {}.
+#i: can expand in middle of line
+#A: auto complete
+#w: only expand by word boundary, as: beg will expand but if use combeg will not
+
+#document
+snippet beg "begin{} / end{}" iA
+\begin{$1}
+     $0
+\end{$1}
+endsnippet
+
+snippet cmt "comment" bA
+%%% `echo $USER` ${1:desc} `!v strftime("%c")`%%%
+endsnippet
+
+snippet frac "fraction" Ai
+\frac{$1}{$2}
+endsnippet
+
+snippet intupdown "integral up and down" Ai
+\int^{${1:up}}_{${2:down}}$0
+endsnippet
+
+snippet ^ "superscript" Ai
+^{$1}$0
+endsnippet
+
+snippet explr "exponential super" Ai
+e^{$1}$0
+endsnippet
+
+snippet _ "subscript" i
+_{$1}$0
+endsnippet
+
+snippet bmat "2*2 matrix" Ai
+\begin{bmatrix}
+	$1&$2 \\\
+	$3&$4 \\\
+\end{bmatrix}$0
+endsnippet
+
+snippet textcolor "text color" Ai
+\textcolor{$1}{$2}$0
+endsnippet
+
+snippet mathbf "math bold font" Ai
+\mathbf{$1} $0
+endsnippet
+
+snippet addequ "add equation" Ai
+\begin{equation}
+	$1
+	\label{$2}
+\end{equation}
+$0
+endsnippet
+
+snippet subfloat "subfloat" bA
+\subfloat[${1:descrip}]{\includegraphics[trim={${2:0cm 0cm 0cm 0cm}}, clip, width=${3:1.0}\textwidth]{${4:name.png}}}
+\hfill
+$0
+endsnippet
+
+snippet addfig "add a figure" bA
+\begin{figure}[${1:htpbH!}]
+  \centering
+  $2
+  \caption{${3:descrip}}
+  \label{$4}
+\end{figure}
+$0
+endsnippet
+
+snippet \[ "equation2" Ai
+\[
+$1
+\]$0
+endsnippet
+
+snippet gongshi "equation1" Ai
+\\\\$
+$1
+$\\\
+$0
+endsnippet
+
+snippet lr{ "curly bracket" Ai
+{${1:${VISUAL}}}$0
+endsnippet
+
+snippet lr[ "squar braket" Ai
+[${1:contents}]$0
+endsnippet
+
+snippet lr$ "doller" Ai
+$${1:contents}$$0
+endsnippet
+
+snippet lrdc "left right dollar squar" Ai
+${${1:contents}}$$0
+endsnippet
+
+snippet upcur "super" Ai
+^{$1${VISUAL}}$0
+endsnippet
+
+snippet downcur "sub" Ai
+_{$1${VISUAL}}$0
+endsnippet
+
+#use blocks in article, remember to usepackge[tikz]{bclogo}
+snippet bclogo "tikzblock" Ai
+\begin{bclogo}[couleur=blue!30, arrondi=0.1, logo=\bccrayon, ombre=true]{$1}
+	$2     
+\end{bclogo}
+$0
+endsnippet
+
+# \usepackage[]{mdframed} 
+snippet mdframed "block2" b
+\begin{mdframed}[backgroundcolor=$1]
+  $2
+\end{mdframed}
+$0
+endsnippet
+
+
+#\usepackage[dvipsnames]{xcolor}
+
+
+
