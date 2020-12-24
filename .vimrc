@@ -211,3 +211,9 @@ set shiftwidth=4
 " elk.in file
 au BufRead,BufNewFile elk.in set filetype=elk
 
+"%%% split window %%%
+" Make adjusing split sizes
+noremap <silent> <C-Left> :vertical resize -3<CR>
+noremap <silent> <C-Right> :vertical resize +3<CR>
+noremap <silent> <C-Up> :resize -3<CR>
+noremap <silent> <C-Down> :resize +3<CR>
